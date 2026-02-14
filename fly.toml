@@ -4,11 +4,12 @@ primary_region = "iad"
 [build]
   image = "livekit/livekit-server:latest"
 
-[env]
-  LIVEKIT_CONFIG = "/etc/livekit.yaml"
+[experimental]
+  cmd = ["/livekit-server", "--config", "/etc/livekit.yaml"]
 
-[files]
-  "/etc/livekit.yaml" = "./livekit.yaml"
+[[files]]
+  guest_path = "/etc/livekit.yaml"
+  local_path = "livekit.yaml"
 
 [[services]]
   internal_port = 7880
