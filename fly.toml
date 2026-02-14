@@ -1,0 +1,27 @@
+app = "talktalkrommie-livekit"
+primary_region = "iad"
+
+[build]
+  image = "livekit/livekit-server:latest"
+
+[env]
+  LIVEKIT_CONFIG = "/etc/livekit.yaml"
+
+[files]
+  "/etc/livekit.yaml" = "./livekit.yaml"
+
+[[services]]
+  internal_port = 7880
+  protocol = "tcp"
+  [[services.ports]]
+    port = 443
+    handlers = ["tls", "http"]
+  [[services.ports]]
+    port = 80
+    handlers = ["http"]
+
+[[services]]
+  internal_port = 7882
+  protocol = "udp"
+  [[services.ports]]
+    port = 7882
