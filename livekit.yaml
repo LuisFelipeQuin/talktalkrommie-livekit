@@ -7,8 +7,7 @@ rtc:
   use_external_ip: true
 
 keys:
-  devkey: supersecret
+  devkey: "sk-a7Bf3xQ9mR2kL8pW4vN6tY1uJ5hG0cZd"
 
 turn:
-  enabled: true
-  tls_port: 443
+  enabled: false

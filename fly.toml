@@ -5,7 +5,8 @@ primary_region = "iad"
   image = "livekit/livekit-server:latest"
 
 [experimental]
-  cmd = ["/livekit-server", "--config", "/etc/livekit.yaml"]
+  entrypoint = ["/livekit-server"]
+  cmd = ["--config", "/etc/livekit.yaml"]
 
 [[files]]
   guest_path = "/etc/livekit.yaml"
