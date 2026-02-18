@@ -36,3 +36,17 @@ primary_region = "iad"
   protocol = "udp"
   [[services.ports]]
     port = 7882
+
+# TURN UDP
+[[services]]
+  internal_port = 3478
+  protocol = "udp"
+  [[services.ports]]
+    port = 3478
+
+# TURN TLS
+[[services]]
+  internal_port = 5349
+  protocol = "tcp"
+  [[services.ports]]
+    port = 5349

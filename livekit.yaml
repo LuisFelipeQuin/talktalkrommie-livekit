@@ -13,4 +13,8 @@ keys:
   devkey: "sk-a7Bf3xQ9mR2kL8pW4vN6tY1uJ5hG0cZd"
 
 turn:
-  enabled: false
+  enabled: true
+  domain: talktalkrommie-livekit.fly.dev
+  tls_port: 5349
+  udp_port: 3478
+  external_tls: true
