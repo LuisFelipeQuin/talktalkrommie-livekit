@@ -12,6 +12,7 @@ primary_region = "iad"
   guest_path = "/etc/livekit.yaml"
   local_path = "livekit.yaml"
 
+# Signaling (WebSocket) - this is how the frontend connects
 [[services]]
   internal_port = 7880
   protocol = "tcp"
@@ -22,6 +23,14 @@ primary_region = "iad"
     port = 80
     handlers = ["http"]
 
+# RTC TCP fallback - for when UDP fails
+[[services]]
+  internal_port = 7881
+  protocol = "tcp"
+  [[services.ports]]
+    port = 7881
+
+# RTC UDP - media traffic
 [[services]]
   internal_port = 7882
   protocol = "udp"
